@@ -45,9 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Goblin Archer\Scripts\Arrow.cs" />
      <Compile Include="Assets\Goblin Archer\Scripts\MouseController.cs" />
      <Compile Include="Assets\Goblin Archer\Scripts\SeguirPersonaje.cs" />
-     <Compile Include="Assets\Scripts\Arrow.cs" />
      <Compile Include="Assets\Scripts\ControladorPersonaje.cs" />
      <Compile Include="Assets\prueba.cs" />
  <Reference Include="UnityEngine.UI">
