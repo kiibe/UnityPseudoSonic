@@ -1,0 +1,7 @@
+git pull --> actualiza
+
+git add [fichero] --> stack
+
+git commit --> escribir commit cntl-X
+
+git push --> sube
