@@ -16,6 +16,10 @@ public class ControladorPersonaje : MonoBehaviour {
 	private bool rotarPjizq = false;
 	private bool rotarPjder = true;
 
+    // bONUS
+    public float moveSpeed = 10f;
+    public float jumpSpeed = 10f;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -42,7 +46,7 @@ public class ControladorPersonaje : MonoBehaviour {
 	// Update is called once per frame
 	void Update() 
 	{
-		if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) 
+		/*if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) 
 		{
             GetComponent<Rigidbody2D>().velocity = Vector2.left* velocidad;
 			if (rotarPjizq == false) 
@@ -67,7 +71,8 @@ public class ControladorPersonaje : MonoBehaviour {
         {
 			if (corriendo) {
 				if (enSuelo) {
-					GetComponent<Rigidbody2D> ().AddForce ((new Vector2 (0, fuerzaSalto)));
+					//GetComponent<Rigidbody2D> ().AddForce((new Vector2 (0, fuerzaSalto)));
+                    GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
 				}
 			} 
 			else 
@@ -78,8 +83,22 @@ public class ControladorPersonaje : MonoBehaviour {
         else 
         {
             GetComponent<Rigidbody2D>().velocity = Vector2.zero * 0;
+        }*/
+
+        //Next two if statements are for moving left and right
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(new Vector2(1, 0) * moveSpeed * Time.deltaTime);
         }
-	}
-		
-		
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Translate(new Vector2(-1, 0) * moveSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            //Jump Script
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpSpeed), ForceMode2D.Impulse);
+        }
+    }
+
 }
