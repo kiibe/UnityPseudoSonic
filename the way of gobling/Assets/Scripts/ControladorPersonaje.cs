@@ -5,8 +5,9 @@ public class ControladorPersonaje : MonoBehaviour {
 	//variables salto
 	private bool enSuelo = true;
 	public Transform comprobadorSuelo;
-	float comprobadorRadio = 0.7f;
+	float comprobadorRadio = 1f;
 	public LayerMask mascaraSuelo;
+    public LayerMask pinchos;
 	private Animator animator;
 
 	//variables correr
@@ -79,7 +80,7 @@ public class ControladorPersonaje : MonoBehaviour {
 		{
 			corriendo = false;
 		}
-		if (Input.GetKey (KeyCode.Space)) 
+		if (Input.GetKey (KeyCode.Space) && enSuelo) 
 		{
 			//Jump Script
 			GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0, jumpSpeed), ForceMode2D.Impulse);
@@ -92,6 +93,14 @@ public class ControladorPersonaje : MonoBehaviour {
 
 		}
 	}
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 9)
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
+    }
 
 
 }
