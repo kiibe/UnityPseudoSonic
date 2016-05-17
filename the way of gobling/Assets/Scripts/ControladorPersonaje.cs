@@ -99,7 +99,6 @@ public class ControladorPersonaje : MonoBehaviour {
 		}
 	}
 
-<<<<<<< HEAD
     // Die
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -110,23 +109,21 @@ public class ControladorPersonaje : MonoBehaviour {
             SceneManager.LoadScene("gameOver");
         }
     }
-}
-=======
-	// Recoge los items, suma puntos y actualiza marcador
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		if(other.gameObject.tag == "Collectable")
-		{
-			other.gameObject.SetActive(false);
-			this.score++;
-			TextMesh marcador = GameObject.Find ("Score").GetComponent<TextMesh> ();
-			marcador.text = this.score.ToString ();
 
-		}
-	}
+    // Recoge los items, suma puntos y actualiza marcador
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Collectable")
+        {
+            other.gameObject.SetActive(false);
+            this.score++;
+            TextMesh marcador = GameObject.Find("Score").GetComponent<TextMesh>();
+            marcador.text = this.score.ToString();
 
+        }
+    }
 
 
 }
 
->>>>>>> origin/master
+
