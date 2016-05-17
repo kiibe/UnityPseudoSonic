@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ControladorPersonaje : MonoBehaviour {
 	//variables salto
 	private bool enSuelo = true;
 	public Transform comprobadorSuelo;
+    public Transform spawnPoint;
 	float comprobadorRadio = 1f;
 	public LayerMask mascaraSuelo;
-    public LayerMask pinchos;
 	private Animator animator;
 
 	//variables correr
@@ -18,7 +19,7 @@ public class ControladorPersonaje : MonoBehaviour {
 
 	// bONUS
 	public float moveSpeed = 10f;
-	public float jumpSpeed = 5f;
+	public float jumpSpeed = 26f;
 
 	// Use this for initialization
 	void Start () 
@@ -38,13 +39,13 @@ public class ControladorPersonaje : MonoBehaviour {
 		{
 			animator.SetFloat("VelX", moveSpeed);
 			enSuelo = Physics2D.OverlapCircle(comprobadorSuelo.position, comprobadorRadio, mascaraSuelo);
-			//animator.SetBool("isGrounded", enSuelo);
+			animator.SetBool("isGrounded", enSuelo);
 		}
 		else 
 		{
 			animator.SetFloat("VelX", GetComponent<Rigidbody2D>().velocity.x);
 			enSuelo = Physics2D.OverlapCircle(comprobadorSuelo.position, comprobadorRadio, mascaraSuelo);
-			//animator.SetBool("isGrounded", enSuelo);
+			animator.SetBool("isGrounded", enSuelo);
 		}
 
 	}
@@ -82,9 +83,10 @@ public class ControladorPersonaje : MonoBehaviour {
 		}
 		if (Input.GetKey (KeyCode.Space) && enSuelo) 
 		{
-			//Jump Script
-			GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0, jumpSpeed), ForceMode2D.Impulse);
-			animator.SetBool ("isGrounded", false);
+            //Jump Script
+            //GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpSpeed), ForceMode2D.Impulse);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpSpeed);
+            animator.SetBool ("isGrounded", false);
 
 		}
 		else 
@@ -94,13 +96,14 @@ public class ControladorPersonaje : MonoBehaviour {
 		}
 	}
 
-    void OnCollisionEnter2D(Collision2D collision)
+    // Die
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if (collision.gameObject.layer == 9)
+        if (other.gameObject.tag == "pinchos")
         {
-            Application.LoadLevel(Application.loadedLevel);
+            // Aplicar animación GameOver
+            //animator.SetTrigger("GameOver");
+            SceneManager.LoadScene("gameOver");
         }
     }
-
-
 }
