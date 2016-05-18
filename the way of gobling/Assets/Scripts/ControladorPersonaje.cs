@@ -121,6 +121,11 @@ public class ControladorPersonaje : MonoBehaviour {
             marcador.text = this.score.ToString();
 
         }
+        else if (other.gameObject.name == "ItemFinJuego")
+        {
+            SceneManager.LoadScene("gameOver"); // O cambiar por otra escena
+        }
+
     }
 
 
