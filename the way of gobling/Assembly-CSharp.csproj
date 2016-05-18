@@ -50,7 +50,10 @@
      <Compile Include="Assets\Goblin Archer\Scripts\SeguirPersonaje.cs" />
      <Compile Include="Assets\Scripts\ControladorPersonaje.cs" />
      <Compile Include="Assets\Scripts\ScoreUpdater.cs" />
+     <Compile Include="Assets\Scripts\botonJugar.cs" />
+     <Compile Include="Assets\Scripts\platform.cs" />
      <Compile Include="Assets\Scripts\scroll.cs" />
+     <Compile Include="Assets\Scripts\startGame.cs" />
      <Compile Include="Assets\prueba.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>

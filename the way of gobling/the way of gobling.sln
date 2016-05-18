@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "the way of gobling.CSharp", "the way of gobling.CSharp.csproj", "{DAF8319A-6CFE-45B5-604B-3554477A0C1E}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DAF8319A-6CFE-45B5-604B-3554477A0C1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DAF8319A-6CFE-45B5-604B-3554477A0C1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DAF8319A-6CFE-45B5-604B-3554477A0C1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DAF8319A-6CFE-45B5-604B-3554477A0C1E}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-EndGlobal
-=======
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
@@ -43,4 +21,3 @@ Global
 		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
->>>>>>> origin/master
